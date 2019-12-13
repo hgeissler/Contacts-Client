@@ -25,11 +25,10 @@ export default class Contacts extends Component {
         </div>
         <div className="row">
           {/* iterate through contacts-array */}
-          { this.state.contacts.map((item) => {
+          { this.state.contacts.map((item) => (
             <SingleContact key={item.id} item={item}/>
-          })}
+          ))}
         </div>
-        <p>Hello</p>
       </div>
     )
   }
