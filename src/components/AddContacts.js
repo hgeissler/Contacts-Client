@@ -11,17 +11,16 @@ export default class AddContacts extends Component {
       email: this.refs.email.value,
     }
 
-    fetch('http://localhost:8080/api/contacts', {
-      method: 'POST',
+    fetch("http://localhost:8080/api/contacts", {
+      method: "POST",
       headers: {
-        "content-type": "application/json"
+        "content-type": "application/json",
       },
       body: JSON.stringify(contact),
     })
-    .then(response => response.json());
-
+    .then(response => response.json())
     // refresh the window
-    window.location.reload();
+    .then(response => window.location.reload());
   }
 
   render() {
@@ -30,11 +29,11 @@ export default class AddContacts extends Component {
         <form className="col s12" onSubmit={this.submitContact.bind(this)}>
           <div className="row">
             <div className="input-field col s6">
-              <input ref="first_name" type="text" className="validate" />
+              <input ref="firstName" type="text" className="validate" />
               <label htmlFor="firstName">First Name</label>
             </div>
             <div className="input-field col s6">
-              <input ref="last_name" type="text" className="validate" />
+              <input ref="lastName" type="text" className="validate" />
               <label htmlFor="lastName">Last Name</label>
             </div>
           </div>
